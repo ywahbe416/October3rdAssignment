@@ -11,7 +11,11 @@ print("After each guess, you'll get a hint if your guess is too high or too low.
 print("You have a maximum of 10 attempts to guesss.")
 
 while attempts < max_attempts:
-    guess = int(input("Enter your guess: "))
+    try:
+            guess = int(input("Enter your guess: "))
+    except ValueError:
+            print("Please enter a valid integer.")
+            continue
     attempts += 1
     if guess < number_to_guess:
         print("Too low!")
